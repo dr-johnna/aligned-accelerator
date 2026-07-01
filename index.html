@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Aligned Business Accelerator | Dr. Johnna Richardson, PhD</title>
+<meta name="description" content="An 8-week live cohort for credentialed women ready to become the authority their work deserves. Identity first, then the build.">
+
+<!-- DM Serif Display from Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<!-- Switzer from Fontshare -->
+<link href="https://api.fontshare.com/v2/css?f[]=switzer@400,500,600,700&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bg: #FEFCF9;
+    --ink: #202020;
+    --teal: #53C5B3;
+    --ink-soft: #4a4a4a;
+    --line: #e7e2da;
+    --panel: #f6f2ec;
+    --serif: "DM Serif Display", Georgia, serif;
+    --sans: "Switzer", -apple-system, BlinkMacSystemFont, sans-serif;
+    --maxw: 1080px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-weight: 400;
+    line-height: 1.65;
+    font-size: 18px;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  .wrap {
+    width: 100%;
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+
+  .teal { color: var(--teal); }
+
+  h1, h2, h3 { font-family: var(--serif); font-weight: 400; line-height: 1.12; letter-spacing: -0.01em; }
+
+  /* -------- Section rhythm -------- */
+  section { padding: 92px 0; }
+  section + section { border-top: 1px solid var(--line); }
+
+  .eyebrow {
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-bottom: 22px;
+  }
+
+  /* -------- Hero -------- */
+  .hero { padding: 116px 0 104px; }
+  .hero h1 {
+    font-size: clamp(3.6rem, 10vw, 7.4rem);
+    max-width: 11ch;
+    margin-bottom: 34px;
+    line-height: 1.02;
+  }
+  .hero p.lede {
+    font-size: clamp(1.1rem, 2.2vw, 1.4rem);
+    color: var(--ink-soft);
+    max-width: 46ch;
+    line-height: 1.55;
+    margin-bottom: 40px;
+  }
+
+  .btn {
+    display: inline-block;
+    background: var(--ink);
+    color: var(--bg);
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: 0.01em;
+    text-decoration: none;
+    padding: 19px 44px;
+    border-radius: 2px;
+    transition: transform 0.18s ease, background 0.18s ease;
+  }
+  .btn:hover { background: var(--teal); color: var(--ink); transform: translateY(-2px); }
+
+  .btn-sub {
+    display: block;
+    font-size: 14px;
+    color: var(--ink-soft);
+    margin-top: 16px;
+    letter-spacing: 0.01em;
+  }
+
+  /* -------- Problem -------- */
+  .problem h2 {
+    font-size: clamp(2rem, 4.2vw, 3.1rem);
+    max-width: 20ch;
+    margin-bottom: 34px;
+  }
+  .problem .cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+    max-width: 860px;
+  }
+  .problem .cols p { color: var(--ink-soft); font-size: 1.05rem; }
+  .problem .cols p + p { margin-top: 18px; }
+
+  .pull {
+    font-family: var(--serif);
+    font-size: clamp(1.6rem, 3.4vw, 2.3rem);
+    line-height: 1.3;
+    max-width: 24ch;
+    margin: 64px 0 0;
+  }
+
+  /* -------- 8 Week Breakdown -------- */
+  .weeks h2 {
+    font-size: clamp(2rem, 4.2vw, 3.1rem);
+    margin-bottom: 14px;
+  }
+  .weeks .sub { color: var(--ink-soft); max-width: 44ch; margin-bottom: 56px; }
+
+  .phase-label {
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 26px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--line);
+  }
+  .phase + .phase { margin-top: 60px; }
+
+  .week {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 28px;
+    padding: 26px 0;
+    border-bottom: 1px solid var(--line);
+    align-items: baseline;
+  }
+  .week:last-child { border-bottom: none; }
+  .week .num {
+    font-family: var(--serif);
+    font-size: 1.5rem;
+    color: var(--ink);
+  }
+  .week .num span { display: block; font-family: var(--sans); font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-soft); font-weight: 600; margin-top: 4px; }
+  .week h3 { font-size: 1.35rem; margin-bottom: 8px; }
+  .week p { color: var(--ink-soft); font-size: 1rem; max-width: 52ch; }
+
+  /* -------- Walk away -------- */
+  .walkaway { background: var(--panel); }
+  .walkaway h2 { font-size: clamp(2rem, 4.2vw, 3.1rem); margin-bottom: 48px; max-width: 18ch; }
+  .walkaway ul { list-style: none; max-width: 780px; }
+  .walkaway li {
+    padding: 24px 0 24px 40px;
+    border-bottom: 1px solid var(--line);
+    position: relative;
+    font-size: 1.12rem;
+  }
+  .walkaway li:last-child { border-bottom: none; }
+  .walkaway li::before {
+    content: "";
+    position: absolute;
+    left: 0; top: 33px;
+    width: 16px; height: 16px;
+    background: var(--teal);
+    border-radius: 50%;
+  }
+  .walkaway li strong { font-weight: 600; }
+
+  /* -------- Who it's for -------- */
+  .forwho h2 { font-size: clamp(2rem, 4.2vw, 3.1rem); margin-bottom: 34px; max-width: 16ch; }
+  .forwho .body { max-width: 60ch; }
+  .forwho .body p { color: var(--ink-soft); font-size: 1.1rem; }
+  .forwho .body p + p { margin-top: 22px; }
+  .forwho .divider { width: 48px; height: 3px; background: var(--teal); margin: 40px 0; }
+
+  /* -------- Bio -------- */
+  .bio { background: var(--ink); color: var(--bg); }
+  .bio .eyebrow { color: #b9b3aa; }
+  .bio h2 { color: var(--bg); font-size: clamp(1.9rem, 4vw, 2.9rem); margin-bottom: 30px; max-width: 20ch; }
+  .bio p { color: #d8d3ca; max-width: 58ch; font-size: 1.08rem; }
+  .bio p + p { margin-top: 20px; }
+  .bio .name { font-family: var(--serif); color: var(--bg); font-size: 1.3rem; margin-top: 36px; }
+  .bio .name span { display: block; font-family: var(--sans); font-size: 14px; font-weight: 500; color: #b9b3aa; letter-spacing: 0.02em; margin-top: 6px; }
+
+  /* -------- Pricing -------- */
+  .pricing { text-align: center; }
+  .pricing .eyebrow { color: var(--teal); }
+  .pricing h2 { font-size: clamp(2rem, 4.4vw, 3.2rem); margin-bottom: 18px; max-width: 20ch; margin-left: auto; margin-right: auto; }
+  .pricing .intro { color: var(--ink-soft); max-width: 42ch; margin: 0 auto 56px; }
+
+  .price-card {
+    border: 1px solid var(--line);
+    background: var(--bg);
+    border-radius: 4px;
+    max-width: 560px;
+    margin: 0 auto;
+    padding: 56px 48px;
+  }
+  .price-main {
+    font-family: var(--serif);
+    font-size: clamp(3rem, 7vw, 4.2rem);
+    line-height: 1;
+    margin-bottom: 10px;
+  }
+  .price-alt { color: var(--ink-soft); font-size: 1.05rem; margin-bottom: 40px; }
+  .price-alt strong { color: var(--ink); font-weight: 600; }
+  .price-card .btn { width: 100%; padding: 21px; }
+  .price-note { font-size: 14px; color: var(--ink-soft); margin-top: 28px; line-height: 1.6; }
+
+  /* -------- Cohort schedule -------- */
+  .schedule h2 { font-size: clamp(2rem, 4.2vw, 3.1rem); margin-bottom: 14px; max-width: 18ch; }
+  .schedule .sub { color: var(--ink-soft); max-width: 50ch; margin-bottom: 48px; }
+  .schedule .kickoff {
+    font-family: var(--serif);
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    line-height: 1.3;
+    margin-bottom: 30px;
+    max-width: 24ch;
+  }
+  .schedule .tz { margin-top: 0; font-size: 15px; color: var(--ink-soft); letter-spacing: 0.02em; }
+
+  /* -------- Founding bonus (dark standout) -------- */
+  .bonus {
+    max-width: 620px;
+    margin: 52px auto 0;
+    background: var(--ink);
+    border-radius: 6px;
+    padding: 48px 52px;
+    text-align: left;
+    box-shadow: 0 24px 60px rgba(32, 32, 32, 0.16);
+  }
+  .bonus .tag {
+    display: inline-block;
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #F0F87C;
+    margin-bottom: 18px;
+  }
+  .bonus h3 { font-size: 1.7rem; margin-bottom: 14px; color: var(--bg); }
+  .bonus h3 .hl { color: #F0F87C; }
+  .bonus p { color: #d8d3ca; font-size: 1.04rem; }
+  .bonus .val { color: var(--bg); font-weight: 600; }
+
+  /* -------- Payment options -------- */
+  .pay-options { display: flex; flex-direction: column; gap: 14px; margin-top: 4px; }
+  .btn-outline {
+    display: block;
+    background: transparent;
+    color: var(--ink);
+    border: 1px solid var(--ink);
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 16px;
+    text-decoration: none;
+    padding: 20px;
+    border-radius: 2px;
+    transition: background 0.18s ease, color 0.18s ease, transform 0.18s ease;
+  }
+  .btn-outline:hover { background: var(--ink); color: var(--bg); transform: translateY(-2px); }
+
+  /* -------- Footer -------- */
+  footer { padding: 60px 0; text-align: center; border-top: 1px solid var(--line); }
+  footer .foot-q { font-family: var(--serif); font-size: 1.4rem; color: var(--ink); margin-bottom: 18px; }
+  footer .foot-q .teal-link { color: var(--teal); text-decoration: none; border-bottom: 1px solid var(--teal); }
+  footer .foot-q .teal-link:hover { color: var(--ink); border-color: var(--ink); }
+  footer p { font-size: 14px; color: var(--ink-soft); }
+  footer .rights { margin-top: 14px; font-size: 13px; letter-spacing: 0.04em; color: var(--ink-soft); }
+  footer a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--line); }
+
+  /* -------- Reveal -------- */
+  .reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.in { opacity: 1; transform: none; }
+
+  /* -------- Responsive -------- */
+  @media (max-width: 720px) {
+    body { font-size: 17px; }
+    section { padding: 64px 0; }
+    .hero { padding: 84px 0 68px; }
+    .problem .cols { grid-template-columns: 1fr; gap: 24px; }
+    .week { grid-template-columns: 1fr; gap: 8px; }
+    .week .num { font-size: 1.2rem; }
+    .price-card { padding: 40px 26px; }
+    .pull { margin-top: 44px; }
+    .bonus { padding: 34px 26px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="wrap">
+    <p class="eyebrow reveal">An 8-week live cohort with Dr. Johnna Richardson, PhD</p>
+    <h1 class="reveal">The Aligned Business <span class="teal">Accelerator</span></h1>
+    <p class="lede reveal">Become the authority your work already earned. For the credentialed woman whose content feels hard, not because she lacks strategy, but because she is still marketing an old version of herself. In eight weeks, you leave aligned and built.</p>
+    <div class="reveal">
+      <a href="#enroll" class="btn">Enroll in the Founding Cohort</a>
+      <span class="btn-sub">8 weeks, live. Starts July 30. Identity first, then the build.</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROBLEM ============ -->
+<section class="problem">
+  <div class="wrap">
+    <p class="eyebrow reveal">The real reason</p>
+    <h2 class="reveal">You are brilliant. You are also, somehow, <span class="teal">invisible</span>.</h2>
+    <div class="cols reveal">
+      <div>
+        <p>You have the credentials. The expertise is not in question. Yet every time you sit down to write, it stalls. The words feel forced. The posts feel like performance.</p>
+        <p>You assume it is a strategy problem, so you collect more frameworks, more hooks, more tactics. None of it sticks.</p>
+      </div>
+      <div>
+        <p>Here is what is actually happening. You are trying to market a version of yourself you have already outgrown. The content feels hard because it is not true anymore.</p>
+        <p>This is not a strategy problem. It is an identity problem. Strategy built on the wrong identity will always feel like effort.</p>
+      </div>
+    </div>
+    <p class="pull reveal">Fix the identity first. Then the marketing stops feeling like a costume.</p>
+  </div>
+</section>
+
+<!-- ============ 8 WEEK BREAKDOWN ============ -->
+<section class="weeks">
+  <div class="wrap">
+    <p class="eyebrow reveal">The eight weeks</p>
+    <h2 class="reveal">Identity first. Then the <span class="teal">build</span>.</h2>
+    <p class="sub reveal">Two phases, one live session each week. You do not build a content engine on a foundation you have not clarified. So we clarify, then we build.</p>
+
+    <div class="phase reveal">
+      <p class="phase-label">Phase One, Weeks 1 to 2: The Foundation</p>
+
+      <div class="week">
+        <div class="num">01<span>Week One</span></div>
+        <div>
+          <h3>Identity and positioning</h3>
+          <p>Define who you actually are now, as a founder and an authority. Name the version of you the business is meant to be built around.</p>
+        </div>
+      </div>
+
+      <div class="week">
+        <div class="num">02<span>Week Two</span></div>
+        <div>
+          <h3>Messaging and your signature framework</h3>
+          <p>Clarify your goals, sharpen your messaging, and develop the signature intellectual property, your IP, or framework that becomes the spine of everything you publish.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="phase reveal">
+      <p class="phase-label">Phase Two, Weeks 3 to 8: The Build</p>
+
+      <div class="week">
+        <div class="num">03<span>Week Three</span></div>
+        <div>
+          <h3>Your voice, translated into your tools</h3>
+          <p>Build your AI content engine on the identity foundation, using Claude alongside the other tools we connect so the system does the heavy lifting. One hour a week creates seven days of content on autopilot.</p>
+        </div>
+      </div>
+
+      <div class="week">
+        <div class="num">04<span>Week Four</span></div>
+        <div>
+          <h3>Turning your framework into content</h3>
+          <p>Wire your signature framework into the engine so your ideas produce content that carries your thinking, not generic filler.</p>
+        </div>
+      </div>
+
+      <div class="week">
+        <div class="num">05<span>Week Five</span></div>
+        <div>
+          <h3>One idea becomes a body of work</h3>
+          <p>Build the repeatable structure that turns a single idea into content across every format that matters to you. This is where the output starts to compound.</p>
+        </div>
+      </div>
+
+      <div class="week">
+        <div class="num">06<span>Week Six</span></div>
+        <div>
+          <h3>Refining the output</h3>
+          <p>Tune the engine until what comes out sounds exactly like you on your sharpest day. Precision over volume.</p>
+        </div>
+      </div>
+
+      <div class="week">
+        <div class="num">07<span>Week Seven</span></div>
+        <div>
+          <h3>Systemizing so it runs without you</h3>
+          <p>Turn the engine into a system you can operate on your terms, in a fraction of the time, without losing your voice.</p>
+        </div>
+      </div>
+
+      <div class="week">
+        <div class="num">08<span>Week Eight</span></div>
+        <div>
+          <h3>Aligned and built</h3>
+          <p>Leave with your identity clarified and a working AI content engine that markets you. Not a folder of ideas. A system that runs.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WALK AWAY WITH ============ -->
+<section class="walkaway">
+  <div class="wrap">
+    <p class="eyebrow reveal">By week eight</p>
+    <h2 class="reveal">What you walk away <span class="teal">holding</span>.</h2>
+    <ul>
+      <li class="reveal"><strong>A defined identity brand.</strong> Clear on who you are now, so the business is built on the real thing.</li>
+      <li class="reveal"><strong>Sharp messaging and goals.</strong> Language that fits the founder you have become, not the one you used to be.</li>
+      <li class="reveal"><strong>Your signature framework.</strong> The intellectual property that makes your work recognizably yours and impossible to copy.</li>
+      <li class="reveal"><strong>An AI content engine in Claude.</strong> Built on your foundation, tuned to your voice, running on your terms.</li>
+      <li class="reveal"><strong>A content system that sounds like you.</strong> It carries your thinking and it runs without you.</li>
+      <li class="reveal"><strong>The shift itself.</strong> The part of you that has been becoming is finally expressed. From an expert nobody sees to a recognized authority with a system that markets her.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ WHO IT'S FOR ============ -->
+<section class="forwho">
+  <div class="wrap">
+    <p class="eyebrow reveal">Who this is for</p>
+    <h2 class="reveal">Credentialed women who are brilliant but <span class="teal">unseen</span>.</h2>
+    <div class="body reveal">
+      <p>You have done the hard work of becoming an expert. The degrees, the years, the depth. What you have not done is make that visible in a way that feels like you.</p>
+      <p>You are not looking for another course full of tactics you will never open again. You want to feel aligned with what you are building, and you want the system that carries it.</p>
+      <div class="divider"></div>
+      <p>This is for the woman ready to stop marketing an old version of herself. Ready to be seen as the authority she already is. Ready to build once, on the right foundation.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BIO ============ -->
+<section class="bio">
+  <div class="wrap">
+    <p class="eyebrow reveal">Who I am</p>
+    <h2 class="reveal">The coaches cannot build. The builders cannot read a human. I do <span class="teal">both</span>.</h2>
+    <p class="reveal">I am a Business Strategist and AI Consultant with a doctorate in psychology. I help high-achieving women build identity-based personal brand businesses from the inside out.</p>
+    <p class="reveal">My edge is the combination. I understand the psychology of why your content feels hard, and I build the real AI systems that solve it. Not theory. Not hype. Identity work paired with engines that actually run.</p>
+    <p class="reveal">That is what the Accelerator is. We do the inner clarity and the outer build in the same eight weeks, so you leave aligned.</p>
+    <p class="name reveal">Dr. Johnna Richardson, PhD<span>Business Strategist and AI Consultant</span></p>
+  </div>
+</section>
+
+<!-- ============ COHORT SCHEDULE ============ -->
+<section class="schedule">
+  <div class="wrap">
+    <p class="eyebrow reveal">The live schedule</p>
+    <h2 class="reveal">Once weekly. One clear <span class="teal">rhythm</span>.</h2>
+    <p class="sub reveal">We meet live once a week for ninety minutes. Same day, same time, simple enough to protect and consistent enough to build a rhythm around.</p>
+
+    <p class="kickoff reveal">We begin <span class="teal">Thursday, July 30</span>. Sessions run 3 to 4:30pm EST.</p>
+
+    <p class="tz reveal">Sessions are live. Replays and resources are always available, yours to keep forever.</p>
+  </div>
+</section>
+
+<!-- ============ PRICING ============ -->
+<section class="pricing" id="enroll">
+  <div class="wrap">
+    <p class="eyebrow reveal">Enrollment</p>
+    <h2 class="reveal">Build once, on the right <span class="teal">foundation</span>.</h2>
+    <p class="intro reveal">One investment. Walk away with a system you keep forever.</p>
+
+    <div class="price-card reveal">
+      <!-- Edit the price here -->
+      <div class="price-main">$2,997</div>
+      <p class="price-alt">Pay in full, or split into <strong>two payments of $1,599</strong></p>
+
+      <div class="pay-options">
+        <!-- Pay in full -->
+        <a href="https://buy.stripe.com/4gM28r5XZgbQ2Ls8Ib9EI05" class="btn">Enroll, Pay in Full</a>
+        <!-- Payment plan -->
+        <a href="https://buy.stripe.com/cNi9ATfyzaRw71If6z9EI06" class="btn-outline">Enroll, Two Payments</a>
+      </div>
+
+      <p class="price-note">8-week live group cohort. One 90-minute session each week, starting July 30 at 3pm EST.</p>
+    </div>
+
+    <!-- Founding bonus -->
+    <div class="bonus reveal">
+      <span class="tag">Founding Cohort Bonus</span>
+      <h3>A private 60-minute session <span class="hl">with me</span>.</h3>
+      <p>Enroll in this first cohort and you receive one 60-minute 1:1, yours to use anytime during the program. Bring your hardest question, your messaging, your build. <span class="val">Valued at $997.</span> Included free for founding members.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <p class="foot-q">Questions? DM Johnna in the <a href="https://www.skool.com/legacy-lab-build-your-brand-3460/about" class="teal-link">Identity Brand AI Studio</a>.</p>
+    <p>Dr. Johnna Consulting LLC &nbsp;&middot;&nbsp; <a href="https://doctorjohnna.com">doctorjohnna.com</a></p>
+    <p class="rights">All rights reserved 2026</p>
+  </div>
+</footer>
+
+<script>
+  // Scroll reveal
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); }
+    });
+  }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
+  document.querySelectorAll('.reveal').forEach((el) => obs.observe(el));
+</script>
+
+</body>
+</html>
