@@ -223,8 +223,28 @@
     line-height: 1;
     margin-bottom: 10px;
   }
-  .price-alt { color: var(--ink-soft); font-size: 1.05rem; margin-bottom: 40px; }
+  .price-alt { color: var(--ink-soft); font-size: 1.05rem; margin-bottom: 26px; }
   .price-alt strong { color: var(--ink); font-weight: 600; }
+  .price-bonus {
+    background: rgba(83, 197, 179, 0.12);
+    border: 1px solid rgba(83, 197, 179, 0.45);
+    border-radius: 4px;
+    padding: 16px 20px;
+    margin-bottom: 32px;
+    font-size: 0.98rem;
+    line-height: 1.5;
+    color: var(--ink);
+  }
+  .price-bonus .pb-tag {
+    display: block;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-size: 0.72rem;
+    color: var(--teal);
+    margin-bottom: 5px;
+  }
+  .price-bonus strong { font-weight: 700; }
   .price-card .btn { width: 100%; padding: 21px; }
   .price-note { font-size: 14px; color: var(--ink-soft); margin-top: 28px; line-height: 1.6; }
 
@@ -516,6 +536,11 @@
       <!-- Edit the price here -->
       <div class="price-main">$2,997</div>
       <p class="price-alt">Pay in full, or split into <strong>two payments of $1,599</strong></p>
+
+      <div class="price-bonus">
+        <span class="pb-tag">Founding Cohort Bonus Included</span>
+        A private 90-minute 1:1 consult. <strong>A $997 value, yours free.</strong>
+      </div>
 
       <div class="pay-options">
         <!-- Pay in full -->
