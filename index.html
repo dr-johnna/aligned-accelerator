@@ -312,7 +312,33 @@
   }
 
   /* -------- Payment options -------- */
-  .pay-options { display: flex; flex-direction: column; gap: 14px; margin-top: 4px; }
+  .price-sub { color: var(--ink-soft); font-size: 1.02rem; margin-bottom: 26px; }
+  .pay-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 4px;
+  }
+  .pay-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 28px 22px;
+    text-align: center;
+  }
+  .pay-label {
+    font-weight: 600;
+    font-size: 0.74rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-bottom: 12px;
+  }
+  .pay-amount { font-family: var(--serif); font-size: 1.9rem; line-height: 1; margin-bottom: 6px; }
+  .pay-detail { font-size: 0.9rem; color: var(--ink-soft); margin-bottom: 22px; }
+  .pay-box .btn, .pay-box .btn-outline { width: 100%; padding: 16px; margin-top: auto; }
   .btn-outline {
     display: block;
     background: transparent;
@@ -350,6 +376,7 @@
     .week { grid-template-columns: 1fr; gap: 8px; }
     .week .num { font-size: 1.2rem; }
     .price-card { padding: 40px 26px; }
+    .pay-grid { grid-template-columns: 1fr; }
     .pull { margin-top: 44px; }
     .bonus { padding: 34px 26px; }
   }
@@ -535,18 +562,28 @@
     <div class="price-card reveal">
       <!-- Edit the price here -->
       <div class="price-main">$2,997</div>
-      <p class="price-alt">Pay in full, or split into <strong>two payments of $1,599</strong></p>
+      <p class="price-sub">The complete 8-week program, yours to keep.</p>
 
+      <!-- Bonus callout, centered under the price -->
       <div class="price-bonus">
         <span class="pb-tag">Founding Cohort Bonus Included</span>
         A private 90-minute 1:1 consult. <strong>A $997 value, yours free.</strong>
       </div>
 
-      <div class="pay-options">
-        <!-- Pay in full -->
-        <a href="https://buy.stripe.com/4gM28r5XZgbQ2Ls8Ib9EI05" class="btn">Enroll, Pay in Full</a>
-        <!-- Payment plan -->
-        <a href="https://buy.stripe.com/cNi9ATfyzaRw71If6z9EI06" class="btn-outline">Enroll, Two Payments</a>
+      <!-- Two payment options, side by side: pay in full (left), payment plan (right) -->
+      <div class="pay-grid">
+        <div class="pay-box">
+          <p class="pay-label">Pay in Full</p>
+          <p class="pay-amount">$2,997</p>
+          <p class="pay-detail">One payment</p>
+          <a href="https://buy.stripe.com/4gM28r5XZgbQ2Ls8Ib9EI05" class="btn">Enroll</a>
+        </div>
+        <div class="pay-box">
+          <p class="pay-label">Payment Plan</p>
+          <p class="pay-amount">2 &times; $1,599</p>
+          <p class="pay-detail">Two payments</p>
+          <a href="https://buy.stripe.com/cNi9ATfyzaRw71If6z9EI06" class="btn-outline">Enroll</a>
+        </div>
       </div>
 
       <p class="price-note">8-week live group cohort. One 90-minute session each week, starting July 30 at 3pm EST.</p>
