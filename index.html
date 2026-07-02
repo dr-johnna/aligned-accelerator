@@ -251,14 +251,15 @@
     box-shadow: 0 24px 60px rgba(32, 32, 32, 0.16);
   }
   .bonus .tag {
-    display: inline-block;
+    display: block;
     font-family: var(--sans);
-    font-weight: 600;
-    font-size: 12px;
-    letter-spacing: 0.18em;
+    font-weight: 700;
+    font-size: clamp(1.5rem, 4.5vw, 2.2rem);
+    letter-spacing: 0.06em;
+    line-height: 1.08;
     text-transform: uppercase;
     color: #F0F87C;
-    margin-bottom: 18px;
+    margin-bottom: 20px;
   }
   .bonus h3 { font-size: 1.7rem; margin-bottom: 14px; color: var(--bg); }
   .bonus h3 .hl { color: #F0F87C; }
@@ -272,6 +273,23 @@
     transition: border-color 0.18s ease;
   }
   .bonus a:hover { border-bottom-color: #F0F87C; }
+  .bonus .bonus-deadline {
+    margin-top: 22px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(254, 252, 249, 0.14);
+    font-size: 0.98rem;
+    font-weight: 600;
+    color: var(--bg);
+  }
+
+  /* -------- Pricing value context -------- */
+  .pricing .value-context {
+    color: var(--ink-soft);
+    max-width: 48ch;
+    margin: 48px auto 0;
+    font-size: 1.08rem;
+    line-height: 1.6;
+  }
 
   /* -------- Payment options -------- */
   .pay-options { display: flex; flex-direction: column; gap: 14px; margin-top: 4px; }
@@ -509,11 +527,14 @@
       <p class="price-note">8-week live group cohort. One 90-minute session each week, starting July 30 at 3pm EST.</p>
     </div>
 
+    <p class="value-context reveal">Most founders hand this work to a content or social media strategist. That runs $3,000 to $12,000 a month, and the meter never stops. What outsourcing rarely gives back is you. Your voice, your thinking, your thumbprint on the work. That is the piece that quietly disappears when someone else runs your brand. Here, you build the asset once. It carries your signature every time it goes to work.</p>
+
     <!-- Founding bonus -->
     <div class="bonus reveal">
       <span class="tag">Founding Cohort Bonus</span>
-      <h3>A private 90-minute 1:1 consult. <span class="hl">A $997 value, yours free.</span></h3>
-      <p>Enroll in this first cohort and you receive one 90-minute private consult with me, yours to use anytime during the program. Bring your hardest question, your messaging, your build. <a href="https://consult.drjohnna.co/">See what this consult normally runs</a>, then know it is included free for founding members.</p>
+      <h3>A private <a href="https://consult.drjohnna.co/">90-minute 1:1 consult</a> with me. <span class="hl">A $997 value, yours free.</span></h3>
+      <p>Enroll in this first cohort and you receive one private consult, yours to use anytime during the program. Bring your hardest question, your messaging, your build.</p>
+      <p class="bonus-deadline">This bonus is for the founding cohort only. It closes when we begin, July 30.</p>
     </div>
   </div>
 </section>
