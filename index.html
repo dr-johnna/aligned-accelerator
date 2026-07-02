@@ -363,6 +363,70 @@
   footer .rights { margin-top: 14px; font-size: 13px; letter-spacing: 0.04em; color: var(--ink-soft); }
   footer a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--line); }
 
+  /* -------- Testimonials -------- */
+  .proof { background: var(--panel); }
+  .proof h2 { font-size: clamp(2rem, 4.2vw, 3.1rem); margin-bottom: 48px; max-width: 20ch; }
+  .proof-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .quote {
+    background: var(--bg);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 34px 32px;
+  }
+  .quote .said {
+    font-family: var(--serif);
+    font-size: 1.3rem;
+    line-height: 1.4;
+    color: var(--ink);
+    margin-bottom: 20px;
+  }
+  .quote .who { font-family: var(--sans); font-size: 0.95rem; font-weight: 600; color: var(--ink); }
+  .quote .who span { display: block; font-weight: 500; color: var(--ink-soft); font-size: 0.85rem; margin-top: 3px; }
+
+  /* -------- Value / ROI -------- */
+  .value h2 { font-size: clamp(2rem, 4.2vw, 3.1rem); margin-bottom: 48px; max-width: 20ch; }
+  .stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-bottom: 48px; }
+  .stat { border-top: 3px solid var(--teal); padding-top: 22px; }
+  .stat-num { font-family: var(--serif); font-size: clamp(2.2rem, 5vw, 3rem); line-height: 1; margin-bottom: 12px; }
+  .stat-label { color: var(--ink-soft); font-size: 1rem; max-width: 30ch; }
+  .bargain {
+    background: var(--ink);
+    color: var(--bg);
+    border-radius: 6px;
+    padding: 36px 40px;
+    margin-bottom: 40px;
+  }
+  .bargain p { font-family: var(--serif); font-size: clamp(1.4rem, 3vw, 1.9rem); line-height: 1.35; }
+  .bargain strong { color: #F0F87C; font-weight: 400; }
+  .value .value-context { color: var(--ink-soft); font-size: 1.1rem; max-width: 60ch; }
+
+  /* -------- FAQ -------- */
+  .faq h2 { font-size: clamp(2rem, 4.2vw, 3.1rem); margin-bottom: 40px; max-width: 16ch; }
+  .faq details { border-bottom: 1px solid var(--line); padding: 24px 0; }
+  .faq details:first-of-type { border-top: 1px solid var(--line); }
+  .faq summary {
+    font-family: var(--serif);
+    font-size: 1.3rem;
+    color: var(--ink);
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+  }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::after {
+    content: "+";
+    font-family: var(--sans);
+    color: var(--teal);
+    font-size: 1.8rem;
+    line-height: 1;
+    transition: transform 0.2s ease;
+  }
+  .faq details[open] summary::after { transform: rotate(45deg); }
+  .faq details p { color: var(--ink-soft); font-size: 1.05rem; max-width: 62ch; margin-top: 16px; }
+
   /* -------- Reveal -------- */
   .reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.7s ease, transform 0.7s ease; }
   .reveal.in { opacity: 1; transform: none; }
@@ -377,6 +441,9 @@
     .week .num { font-size: 1.2rem; }
     .price-card { padding: 40px 26px; }
     .pay-grid { grid-template-columns: 1fr; }
+    .proof-grid { grid-template-columns: 1fr; }
+    .stat-grid { grid-template-columns: 1fr; gap: 32px; }
+    .bargain { padding: 28px 24px; }
     .pull { margin-top: 44px; }
     .bonus { padding: 34px 26px; }
   }
@@ -539,6 +606,32 @@
   </div>
 </section>
 
+<!-- ============ TESTIMONIALS ============ -->
+<section class="proof">
+  <div class="wrap">
+    <p class="eyebrow reveal">In their words</p>
+    <h2 class="reveal">The work changes how they <span class="teal">see themselves</span>.</h2>
+    <div class="proof-grid">
+      <blockquote class="quote reveal">
+        <p class="said">"After the identity excavation process with Dr. Johnna, I finally feel I have words to describe everything that has been inside of me."</p>
+        <p class="who">Dr. Tammy<span>Trauma Transformation Coach</span></p>
+      </blockquote>
+      <blockquote class="quote reveal">
+        <p class="said">"I came in wanting strategy. I left with an entirely different relationship to my business."</p>
+        <p class="who">Christine<span>CEO, Photography Studio</span></p>
+      </blockquote>
+      <blockquote class="quote reveal">
+        <p class="said">"The work pulled out things I'd been carrying for years and didn't know were valuable."</p>
+        <p class="who">Kari<span>Brand Strategist</span></p>
+      </blockquote>
+      <blockquote class="quote reveal">
+        <p class="said">"Working with Dr. Johnna gave me the clarity to charge what I'm worth without apologizing for it."</p>
+        <p class="who">Claudia<span>HR Expert</span></p>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
 <!-- ============ COHORT SCHEDULE ============ -->
 <section class="schedule">
   <div class="wrap">
@@ -549,6 +642,35 @@
     <p class="kickoff reveal">We begin <span class="teal">Thursday, July 30</span>. Sessions run 3 to 4:30pm EST.</p>
 
     <p class="tz reveal">Sessions are live. Replays and resources are always available, yours to keep forever.</p>
+  </div>
+</section>
+
+<!-- ============ VALUE / ROI ============ -->
+<section class="value">
+  <div class="wrap">
+    <p class="eyebrow reveal">What it saves you</p>
+    <h2 class="reveal">Build it once. It pays you back <span class="teal">every week after</span>.</h2>
+
+    <div class="stat-grid reveal">
+      <div class="stat">
+        <p class="stat-num">$36,000+</p>
+        <p class="stat-label">A year of outsourcing this to a strategist, at the low end. The bill never stops.</p>
+      </div>
+      <div class="stat">
+        <p class="stat-num">8 weeks</p>
+        <p class="stat-label">To build the whole thing with me, guided step by step. Done once.</p>
+      </div>
+      <div class="stat">
+        <p class="stat-num">~1 hour</p>
+        <p class="stat-label">A week to run the finished engine and produce content in your voice.</p>
+      </div>
+    </div>
+
+    <div class="bargain reveal">
+      <p><strong>$36,000+ a year</strong> outsourced, and the voice still is not yours. <strong>$2,997 once</strong>, and the asset is.</p>
+    </div>
+
+    <p class="value-context reveal">There is a deeper cost to outsourcing, and it is not the invoice. It is you. Your voice, your thinking, your thumbprint on the work. That is the part that quietly disappears when someone else runs your brand. Here, you build the asset once, and it carries your signature every time it goes to work.</p>
   </div>
 </section>
 
@@ -588,14 +710,43 @@
       <p class="price-note">8-week live group cohort. One 90-minute session each week, starting July 30 at 3pm EST.</p>
     </div>
 
-    <p class="value-context reveal">Most founders hand this work to a content or social media strategist. That runs $3,000 to $12,000 a month, and the meter never stops. What outsourcing rarely gives back is you. Your voice, your thinking, your thumbprint on the work. That is the piece that quietly disappears when someone else runs your brand. Here, you build the asset once. It carries your signature every time it goes to work.</p>
-
     <!-- Founding bonus -->
     <div class="bonus reveal">
       <span class="tag">Founding Cohort Bonus</span>
       <h3>A private <a href="https://consult.drjohnna.co/" target="_blank" rel="noopener">90-minute 1:1 consult</a> with me. <span class="hl">A $997 value, yours free.</span></h3>
       <p>Enroll in this first cohort and you receive one private consult, yours to use anytime during the program. Bring your hardest question, your messaging, your build.</p>
       <p class="bonus-deadline">This bonus is for the founding cohort only. It closes when we begin, July 30.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="faq">
+  <div class="wrap">
+    <p class="eyebrow reveal">Before you ask</p>
+    <h2 class="reveal">The honest <span class="teal">answers</span>.</h2>
+
+    <div class="reveal">
+      <details>
+        <summary>Do I need to be technical?</summary>
+        <p>No. I walk you through every step, live. There is nothing to install on your own and no code to write. If you can join a video call and follow along, you can do this.</p>
+      </details>
+      <details>
+        <summary>What if I have never used AI?</summary>
+        <p>That is completely fine. You do not need any AI experience to start. I equip you with each piece, step by step, and you leave knowing how to run the whole thing yourself.</p>
+      </details>
+      <details>
+        <summary>Is this just another course?</summary>
+        <p>No. This is done with me, together, in real time. Not a library of videos you watch alone and never finish. I walk you through every part of the journey, and you build the real thing as we go.</p>
+      </details>
+      <details>
+        <summary>How much time does it take?</summary>
+        <p>Plan on about three hours a week. That is one live 90-minute session, plus a little focused work between sessions. By the end, the finished engine runs in a fraction of that.</p>
+      </details>
+      <details>
+        <summary>What if I fall behind?</summary>
+        <p>You will not lose anything. Every session is recorded and the resources are yours to keep forever, so you can move at your own pace and revisit any part whenever you need it.</p>
+      </details>
     </div>
   </div>
 </section>
