@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Aligned Business Accelerator | Dr. Johnna Richardson, PhD</title>
-<meta name="description" content="An 8-week live cohort for credentialed women ready to become the authority their work deserves. Identity first, then the build.">
+<meta name="description" content="An 8-week live cohort for credentialed women. Come into alignment, build your AI team, and become the authority your work already earned.">
 
 <!-- DM Serif Display from Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -187,6 +187,14 @@
   }
   .walkaway li strong { font-weight: 600; }
 
+  /* -------- Before / after strip (inside walkaway) -------- */
+  .shift-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; max-width: 860px; margin-top: 56px; }
+  .shift-card { background: var(--bg); border: 1px solid var(--line); border-radius: 6px; padding: 34px 32px; }
+  .shift-label { font-weight: 700; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 14px; }
+  .shift-card.after .shift-label { color: var(--teal); }
+  .shift-card p:not(.shift-label) { color: var(--ink-soft); font-size: 1.05rem; }
+  .shift-card.after p:not(.shift-label) { color: var(--ink); }
+
   /* -------- Who it's for -------- */
   .forwho h2 { font-size: clamp(2rem, 4.2vw, 3.1rem); margin-bottom: 34px; max-width: 16ch; }
   .forwho .body { max-width: 60ch; }
@@ -301,15 +309,6 @@
     color: var(--bg);
   }
 
-  /* -------- Pricing value context -------- */
-  .pricing .value-context {
-    color: var(--ink-soft);
-    max-width: 48ch;
-    margin: 48px auto 0;
-    font-size: 1.08rem;
-    line-height: 1.6;
-  }
-
   /* -------- Payment options -------- */
   .price-sub { color: var(--ink-soft); font-size: 1.02rem; margin-bottom: 26px; }
   .pay-grid {
@@ -382,22 +381,40 @@
   .quote .who { font-family: var(--sans); font-size: 0.95rem; font-weight: 600; color: var(--ink); }
   .quote .who span { display: block; font-weight: 500; color: var(--ink-soft); font-size: 0.85rem; margin-top: 3px; }
 
-  /* -------- Value / ROI -------- */
-  .value h2 { font-size: clamp(2rem, 4.2vw, 3.1rem); margin-bottom: 48px; max-width: 20ch; }
-  .stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-bottom: 48px; }
-  .stat { border-top: 3px solid var(--teal); padding-top: 22px; }
-  .stat-num { font-family: var(--serif); font-size: clamp(2.2rem, 5vw, 3rem); line-height: 1; margin-bottom: 12px; }
-  .stat-label { color: var(--ink-soft); font-size: 1rem; max-width: 30ch; }
-  .bargain {
-    background: var(--ink);
-    color: var(--bg);
-    border-radius: 6px;
-    padding: 36px 40px;
-    margin-bottom: 40px;
+  /* -------- Value stack: the payroll comparison -------- */
+  .value h2 { font-size: clamp(2rem, 4.2vw, 3.1rem); margin-bottom: 26px; max-width: 22ch; }
+  .value .value-intro { color: var(--ink-soft); max-width: 62ch; font-size: 1.08rem; margin-bottom: 52px; }
+  .role-stack { max-width: 880px; }
+  .role {
+    display: grid;
+    grid-template-columns: 240px 1fr 130px;
+    gap: 26px;
+    padding: 22px 0;
+    border-bottom: 1px solid var(--line);
+    align-items: baseline;
   }
-  .bargain p { font-family: var(--serif); font-size: clamp(1.4rem, 3vw, 1.9rem); line-height: 1.35; }
-  .bargain strong { color: #F0F87C; font-weight: 400; }
-  .value .value-context { color: var(--ink-soft); font-size: 1.1rem; max-width: 60ch; }
+  .role-name { font-weight: 600; font-size: 1.02rem; }
+  .role-desc { color: var(--ink-soft); font-size: 1rem; }
+  .role-cost { font-family: var(--serif); font-size: 1.35rem; text-align: right; white-space: nowrap; }
+  .role-fineprint { font-size: 13px; color: var(--ink-soft); margin-top: 14px; max-width: 880px; }
+  .role-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 24px;
+    flex-wrap: wrap;
+    max-width: 880px;
+    margin-top: 56px;
+  }
+  .rt-label { font-family: var(--serif); font-size: clamp(1.3rem, 2.6vw, 1.7rem); }
+  .rt-num { font-family: var(--serif); font-size: clamp(3rem, 8vw, 4.6rem); line-height: 1; color: var(--teal); }
+  .rt-num span { font-family: var(--sans); font-size: 1rem; color: var(--ink-soft); font-weight: 500; letter-spacing: 0.02em; }
+  .anchor-drop { color: var(--ink-soft); max-width: 58ch; font-size: 1.1rem; margin-top: 40px; }
+  .value-price { margin-top: 64px; }
+  .vp-line { font-family: var(--serif); font-size: clamp(1.2rem, 2.4vw, 1.5rem); margin-bottom: 10px; }
+  .vp-num { font-family: var(--serif); font-size: clamp(2.4rem, 6vw, 3.4rem); line-height: 1; color: var(--teal); margin-bottom: 10px; }
+  .vp-alt { color: var(--ink-soft); font-size: 1.02rem; }
+  .value-close { font-family: var(--serif); font-size: clamp(1.3rem, 2.8vw, 1.8rem); line-height: 1.4; max-width: 32ch; margin-top: 56px; }
 
   /* -------- FAQ -------- */
   .faq h2 { font-size: clamp(2rem, 4.2vw, 3.1rem); margin-bottom: 40px; max-width: 16ch; }
@@ -441,8 +458,10 @@
     .price-card { padding: 40px 26px; }
     .pay-grid { grid-template-columns: 1fr; }
     .proof-grid { grid-template-columns: 1fr; }
-    .stat-grid { grid-template-columns: 1fr; gap: 32px; }
-    .bargain { padding: 28px 24px; }
+    .shift-grid { grid-template-columns: 1fr; }
+    .role { grid-template-columns: 1fr; gap: 6px; }
+    .role-cost { text-align: left; }
+    .role-total { margin-top: 40px; }
     .pull { margin-top: 44px; }
     .bonus { padding: 34px 26px; }
   }
@@ -455,7 +474,7 @@
   <div class="wrap">
     <p class="eyebrow reveal">An 8-week live cohort with Dr. Johnna Richardson, PhD</p>
     <h1 class="reveal">The Aligned Business <span class="teal">Accelerator</span></h1>
-    <p class="lede reveal">Become the authority your work already earned. For the credentialed woman whose content feels hard, not because she lacks strategy, but because she is still marketing an old version of herself. In eight weeks, you come into alignment and show up as the authority you already are.</p>
+    <p class="lede reveal">Become the authority your work already earned, with a business that stops running on you. For the credentialed woman whose content feels hard, not because she lacks strategy, but because she's still marketing an old version of herself. In eight weeks you come into alignment, then build the AI team that carries the work, so being visible stops costing you your week.</p>
     <div class="reveal">
       <a href="#enroll" class="btn">Enroll in the Founding Cohort</a>
       <span class="btn-sub">8 weeks, live. Starts July 30. Identity first, everything else follows.</span>
@@ -487,7 +506,7 @@
   <div class="wrap">
     <p class="eyebrow reveal">The eight weeks</p>
     <h2 class="reveal">Identity first. Everything else <span class="teal">follows</span>.</h2>
-    <p class="sub reveal">Two phases, one live session each week. Clarity comes first, because everything you put out only works when it stands on who you actually are.</p>
+    <p class="sub reveal">Two phases, one live session each week. Clarity comes first, then we build. Every piece is built with me, live, so nothing lands on your plate alone.</p>
 
     <div class="phase reveal">
       <p class="phase-label">Phase One, Weeks 1 to 2: The Foundation</p>
@@ -510,13 +529,13 @@
     </div>
 
     <div class="phase reveal">
-      <p class="phase-label">Phase Two, Weeks 3 to 8: The Build</p>
+      <p class="phase-label">Phase Two, Weeks 3 to 8: Build Your AI Team</p>
 
       <div class="week">
         <div class="num">03<span>Week Three</span></div>
         <div>
           <h3>Your voice, translated into your tools</h3>
-          <p>Build your AI content engine on the identity foundation, using Claude alongside the other tools we connect so the system does the heavy lifting. One hour a week creates seven days of content on autopilot.</p>
+          <p>Build the first member of your AI team, a content assistant trained on your identity foundation, using Claude alongside the tools we connect. One hour a week produces what used to take your whole week.</p>
         </div>
       </div>
 
@@ -524,7 +543,7 @@
         <div class="num">04<span>Week Four</span></div>
         <div>
           <h3>Turning your framework into content</h3>
-          <p>Wire your signature framework into the engine so your ideas produce content that carries your thinking, not generic filler.</p>
+          <p>Your assistant learns your signature framework, so everything it drafts carries your thinking, not generic filler. Your ideas become the content, without you typing every word of it.</p>
         </div>
       </div>
 
@@ -532,7 +551,7 @@
         <div class="num">05<span>Week Five</span></div>
         <div>
           <h3>One idea becomes a body of work</h3>
-          <p>Build the repeatable structure that turns a single idea into content across every format that matters to you. This is where the output starts to compound.</p>
+          <p>Build the repeatable structure that turns a single idea into a week of work, in every format that matters to you. Your output compounds while your hours stay flat.</p>
         </div>
       </div>
 
@@ -540,7 +559,7 @@
         <div class="num">06<span>Week Six</span></div>
         <div>
           <h3>Refining the output</h3>
-          <p>Tune the engine until what comes out sounds exactly like you on your sharpest day. Precision over volume.</p>
+          <p>Tune your assistant until what comes out sounds exactly like you on your sharpest day. Precision over volume.</p>
         </div>
       </div>
 
@@ -548,7 +567,7 @@
         <div class="num">07<span>Week Seven</span></div>
         <div>
           <h3>Systemizing so it runs without you</h3>
-          <p>Turn the engine into a system you can operate on your terms, in a fraction of the time, without losing your voice.</p>
+          <p>Expand past content. Build the additional assistants that hold the recurring work quietly draining you, then turn the whole thing into a system you operate on your terms, in a fraction of the time.</p>
         </div>
       </div>
 
@@ -556,7 +575,7 @@
         <div class="num">08<span>Week Eight</span></div>
         <div>
           <h3>Aligned and built</h3>
-          <p>Leave with your identity clarified and a working AI content engine that markets you. Not a folder of ideas. A system that runs.</p>
+          <p>Leave aligned, visible, and no longer the only one doing the work. Your identity is clear, and your AI team runs the parts of the business that used to run you.</p>
         </div>
       </div>
     </div>
@@ -572,10 +591,22 @@
       <li class="reveal"><strong>A defined identity brand.</strong> Clear on who you are now, so the business is built on the real thing.</li>
       <li class="reveal"><strong>Sharp messaging and goals.</strong> Language that fits the founder you have become, not the one you used to be.</li>
       <li class="reveal"><strong>Your signature framework.</strong> The intellectual property that makes your work recognizably yours and impossible to copy.</li>
-      <li class="reveal"><strong>An AI content engine in Claude.</strong> Built on your foundation, tuned to your voice, running on your terms.</li>
-      <li class="reveal"><strong>A content system that sounds like you.</strong> It carries your thinking and it runs without you.</li>
+      <li class="reveal"><strong>Your AI team.</strong> A content assistant plus the additional assistants that carry your recurring work, all trained on your voice and running on your terms.</li>
+      <li class="reveal"><strong>Your time back.</strong> The hours you spend producing and managing, returned to you. The business stops requiring all of you to keep moving.</li>
       <li class="reveal"><strong>The shift itself.</strong> The part of you that has been becoming is finally expressed. From an expert nobody sees to a recognized authority with a system that markets her.</li>
     </ul>
+
+    <!-- Before and after: the transformation in one glance -->
+    <div class="shift-grid reveal">
+      <div class="shift-card">
+        <p class="shift-label">Right now</p>
+        <p>Everything moves through you. Every post, every email, every piece of research needs your hands and your hours.</p>
+      </div>
+      <div class="shift-card after">
+        <p class="shift-label">After week eight</p>
+        <p>The business is built on who you are, and your AI team carries it. You set the direction in about an hour a week and show up as the authority.</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -644,32 +675,59 @@
   </div>
 </section>
 
-<!-- ============ VALUE / ROI ============ -->
+<!-- ============ VALUE STACK: what the team costs in payroll ============ -->
 <section class="value">
   <div class="wrap">
-    <p class="eyebrow reveal">What it saves you</p>
-    <h2 class="reveal">Do it once. It keeps paying you back <span class="teal">every week after</span>.</h2>
+    <p class="eyebrow reveal">What this would cost you in payroll</p>
+    <h2 class="reveal">You are not buying a course. You are hiring a <span class="teal">team</span>.</h2>
+    <p class="value-intro reveal">Every role below is work you either do yourself right now or pay someone else to do. Here is what these roles cost as human hires, at conservative US market rates. In the Accelerator, you build each one as a trained AI assistant that works in your voice, on your foundation, on your schedule.</p>
 
-    <div class="stat-grid reveal">
-      <div class="stat">
-        <p class="stat-num">$36,000+</p>
-        <p class="stat-label">A strategist runs $3,000 to $10,000 a month. The bill never stops.</p>
+    <!-- The role stack: edit roles or figures here -->
+    <div class="role-stack reveal">
+      <div class="role">
+        <p class="role-name">Content strategist</p>
+        <p class="role-desc">Turns your ideas into a weekly body of work in your voice</p>
+        <p class="role-cost">$18,000</p>
       </div>
-      <div class="stat">
-        <p class="stat-num">8 weeks</p>
-        <p class="stat-label">To do this with me, guided step by step. Done once.</p>
+      <div class="role">
+        <p class="role-name">Content repurposer</p>
+        <p class="role-desc">Reshapes one idea into every format that matters to you</p>
+        <p class="role-cost">$12,000</p>
       </div>
-      <div class="stat">
-        <p class="stat-num">~1 hour</p>
-        <p class="stat-label">A week to run the finished engine and produce content in your voice.</p>
+      <div class="role">
+        <p class="role-name">Research assistant</p>
+        <p class="role-desc">Gathers, organizes, and briefs so you create from a full desk</p>
+        <p class="role-cost">$15,000</p>
+      </div>
+      <div class="role">
+        <p class="role-name">Inbox and operations support</p>
+        <p class="role-desc">Holds the recurring admin that fragments your week</p>
+        <p class="role-cost">$16,000</p>
+      </div>
+      <div class="role">
+        <p class="role-name">Offer and messaging support</p>
+        <p class="role-desc">Keeps your positioning sharp as you grow</p>
+        <p class="role-cost">$14,000</p>
       </div>
     </div>
+    <p class="role-fineprint reveal">Human-hire figures are conservative US market estimates for part-time or freelance equivalents, shown for comparison.</p>
 
-    <div class="bargain reveal">
-      <p><strong>$36,000+ a year</strong>, paid again every year it runs. Or <strong>$2,997 once</strong>, and it is yours to keep for good.</p>
+    <!-- The total: this number should dominate the section -->
+    <div class="role-total reveal">
+      <p class="rt-label">A team like this, hired in human hours:</p>
+      <p class="rt-num">$75,000 <span>a year</span></p>
     </div>
 
-    <p class="value-context reveal">There is a deeper cost to outsourcing, and it is not only the invoice. When someone else runs your brand, you are renting. The moment you stop paying, it stops. Here, you own it. The framework, the system, the equity you create, all of it stays yours and keeps working long after these eight weeks end.</p>
+    <p class="anchor-drop reveal">You will not spend that. You also will not spend a fraction of it on payroll, benefits, training, or management. You build the team once, in eight weeks, and it keeps working long after we finish.</p>
+
+    <!-- Price reveal, calm under the anchor -->
+    <div class="value-price reveal">
+      <p class="vp-line">The Aligned Business Accelerator is</p>
+      <p class="vp-num">$2,997</p>
+      <p class="vp-alt">Or two payments of $1,599.</p>
+    </div>
+
+    <p class="value-close reveal">The real return is not the payroll you save. It is the authority you finally get seen for, and the hours that come back to your life.</p>
   </div>
 </section>
 
@@ -735,12 +793,16 @@
         <p>That is completely fine. You do not need any AI experience to start. I equip you with each piece, step by step, and you leave knowing how to run the whole thing yourself.</p>
       </details>
       <details>
+        <summary>What tools will I need?</summary>
+        <p>A Claude account plus the tools we connect together during the sessions. I walk you through every setup live, on screen. If you can join a video call, you have what you need.</p>
+      </details>
+      <details>
         <summary>Is this just another course?</summary>
         <p>No. This is done with me, together, in real time. Not a library of videos you watch alone and never finish. I walk you through every part of the journey, and you build the real thing as we go.</p>
       </details>
       <details>
         <summary>How much time does it take?</summary>
-        <p>Our live session each week is 90 minutes. Plan on another one to three hours of focused work between sessions. Once your engine is built, it takes only about an hour a week to create your marketing content.</p>
+        <p>Our live session each week is 90 minutes. Plan on another one to three hours between sessions, most of it building alongside me. Once your team is built, about an hour a week runs your whole content operation.</p>
       </details>
       <details>
         <summary>What if I fall behind?</summary>
